@@ -28,7 +28,6 @@ set_load         1     [all_outputs]
 #You may also add more constraints for your design (but do not overwrite the existing ones in above section)
 #####################################################
 set t_long [expr {$cycle / 2.0 + 0.1}]
-echo "t_long = $t_long"
 set t_short  0.1
 set_input_delay  $t_long  -clock CLK [remove_from_collection [remove_from_collection [all_inputs] [get_ports clk]] [get_ports rst_n]]
 set_input_delay  $t_short -clock CLK [get_ports rst_n]
